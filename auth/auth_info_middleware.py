@@ -197,7 +197,7 @@ class AuthInfoMiddleware(Middleware):
                                             f"token={_token_fingerprint(token_str)} "
                                             f"provider={type(auth_provider).__name__}"
                                         )
-                                except Exception:
+                                except Exception as e:
                                     logger.error(
                                         f"[AuthInfoMiddleware] Token verification raised exception "
                                         f"reason=verify_token_exception "
